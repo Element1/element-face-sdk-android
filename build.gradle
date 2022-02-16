@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+Properties properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+buildscript {
+    ext {
+        globalMinSdkVersion = "21"
+        globalCompileSdkVersion = "30"
+        globalTargetSdkVersion = "30"
+        globalBuildToolsVersion = "30.0.2"
+        globalGradleVersion = "4.2.1"
+        globalKotlinVersion = "1.4.0"
+        globalElementSdkVersion = "1.6.1.30429"
+
+        def localProperties = new Properties()
+        localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+        elementMavenAccessKey = localProperties["elementMavenAccessKey"]
+        elementMavenSecretKey = localProperties["elementMavenSecretKey"]
+    }
+
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:${globalGradleVersion}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${globalKotlinVersion}"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "s3://maven.android.discoverelement.com/releases"
+            credentials(AwsCredentials) {
+                accessKey elementMavenAccessKey
+                secretKey elementMavenSecretKey
+            }
+        }
+    }
+}

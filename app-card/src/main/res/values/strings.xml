@@ -1,0 +1,39 @@
+<resources>
+    <string name="name">Name</string>
+    <string name="user_id_optional">User ID (Optional)</string>
+    <string name="enroll_completed">Account successfully created!</string>
+    <string name="enroll_canceled">Enrollment canceled</string>
+
+    <string name="error_msg_empty_fields">Please enter user information</string>
+    <string name="enroll_info">Enter information to enroll a new user. Element SDK will assign a user ID if the User ID field is blank. Enrollment will run on the device.</string>
+    <string name="processing">Processing…</string>
+    <string name="revision">Post Changes To Dashboard</string>
+
+    <string name="no_user">No User</string>
+    <string name="user_id_status">User ID: %s</string>
+    <string name="add_user">Add User</string>
+    <string name="face_enroll">Local selfie enrollment</string>
+
+    <string name="no_document">No Document</string>
+    <string name="doc_type_id_status">DocType ID: %s</string>
+    <string name="doc_select">Document select</string>
+    <string name="card_scan">Card scan</string>
+
+    <string name="token_status">Token: %s</string>
+    <string name="perform_ocr">Perform OCR</string>
+    <string name="card_face_match">Card-to-face matching</string>
+    <string name="ocr_review">OCR &amp; online review</string>
+
+    <string name="more_options">More options</string>
+    <string name="check_review_status">Check Last OCR &amp; Review status</string>
+    <string name="display_scanned_photos">Display Scanned Photos</string>
+    <string name="display_selfies">Display enrollment selfies</string>
+    <string name="delete_account">Delete Account</string>
+
+    <string name="ocr_result_title">OCR Results:</string>
+
+    <string name="review_result_title">Review Results:</string>
+    <string name="ocr_review_result_title">OCR/Review Results:</string>
+    <string name="card_completed">ID card scan successfully!</string>
+    <string name="card_cancelled">Couldn\'t complete ID card scan</string>
+</resources>

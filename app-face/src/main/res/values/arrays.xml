@@ -1,0 +1,13 @@
+<resources>
+    <string-array name="processing">
+        <item>Local</item>
+        <item>Server Side</item>
+    </string-array>
+
+    <string-array name="uiDelegate">
+        <item>SelfieDotV2</item>
+        <item>SelfieDotV1</item>
+        <item>Flower</item>
+        <item>Wave</item>
+    </string-array>
+</resources>
