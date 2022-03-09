@@ -11,10 +11,7 @@ import com.element.camera.UserInfo
 class UserInfoAdapter(
     private val userInfoList: ArrayList<UserInfo>,
     private val mainActivity: FaceExMainActivity
-) :
-    RecyclerView.Adapter<UserInfoAdapter.MyViewHolder>() {
-
-    class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
+) : RecyclerView.Adapter<UserInfoAdapter.MyViewHolder>() {
 
     fun refresh(updatedList: ArrayList<UserInfo>) {
         userInfoList.clear()
@@ -40,4 +37,6 @@ class UserInfoAdapter(
     }
 
     override fun getItemCount() = userInfoList.size
+
+    class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
 }

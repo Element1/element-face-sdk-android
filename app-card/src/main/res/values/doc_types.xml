@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="element_cardScan">
+        <item>@array/doc1</item>
+        <item>@array/doc2</item>
+    </array>
+
+    <array name="doc1">
+        <item>placeholder</item>
+        <item>@array/doc1_text</item>
+        <item>@array/doc1_icon</item>
+    </array>
+
+    <string-array name="doc1_text">
+        <item>@string/element_scanFrontPage</item>
+    </string-array>
+
+    <integer-array name="doc1_icon">
+        <item>@drawable/ic_passport</item>
+    </integer-array>
+
+    <array name="doc2">
+        <item>placeholder</item>
+        <item>@array/doc2_text</item>
+        <item>@array/doc2_icon</item>
+    </array>
+
+    <string-array name="doc2_text">
+        <item>@string/element_scanFrontSide</item>
+    </string-array>
+
+    <integer-array name="doc2_icon">
+        <item>@drawable/ic_drivers_license</item>
+    </integer-array>
+</resources>

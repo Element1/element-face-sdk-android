@@ -1,11 +1,19 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ListPreference
+        app:defaultValue="Gaze"
+        app:entries="@array/liveness"
+        app:entryValues="@array/liveness"
+        app:key="liveness"
+        app:title="Liveness"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
         app:defaultValue="Local"
         app:entries="@array/processing"
         app:entryValues="@array/processing"
         app:key="processing"
-        app:title="Processing"
+        app:title="Processing (Gaze only)"
         app:useSimpleSummaryProvider="true" />
 
     <ListPreference
@@ -13,7 +21,7 @@
         app:entries="@array/uiDelegate"
         app:entryValues="@array/uiDelegate"
         app:key="uiDelegate"
-        app:title="UI Delegate"
+        app:title="UI (Gaze only)"
         app:useSimpleSummaryProvider="true" />
 
 </PreferenceScreen>

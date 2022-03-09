@@ -1,6 +1,12 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.7.0.32291
+[March 8, 2022]
+* Introduced the [element-ekyc-cloud](element-ekyc-sdk-guide.md) AAR library for the cloud eKYC solution
+* Updated the dependency versions
+* Provided more UI customization approaches
+
 #### Version: 1.6.1.30429
 [December 20, 2021]
 * Performance tuning
@@ -80,7 +86,7 @@
 #### Version: 1.1.0
 [October 15, 2019]
 * New modularized SDK architecture to achieve flexible project frameworks and to fulfill various requirements
-* Introducing the redesigned AARs
+* Introduced the redesigned AARs
   * element-face-cam
   * element-face-core
   * element-face-support

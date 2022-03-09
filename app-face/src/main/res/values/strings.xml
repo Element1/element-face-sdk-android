@@ -9,6 +9,7 @@
     <string name="server_auth">Server side auth</string>
     <string name="enroll_first">Please enroll first</string>
     <string name="error_msg_empty_fields">Please enter user information</string>
+    <string name="error_invalid_user_id">Invalid userId - alphanumeric, hyphen, and underscore characters only</string>
     <string name="enroll_completed">Account successfully created!</string>
     <string name="enroll_cancelled">Couldn\'t complete enrollment</string>
     <string name="auth_verified">Verified %1$s</string>

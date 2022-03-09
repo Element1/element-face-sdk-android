@@ -49,9 +49,9 @@ class ResultFragment : DialogFragment() {
         confirmText.text = message
         confirmImage.setImageResource(iconResId)
 
-        retryButton.visibility = if (activity is ServerSideAuthActivity) View.VISIBLE else View.GONE
+        retryButton.visibility = if (activity is ServerAuthActivity) View.VISIBLE else View.GONE
         retryButton.setOnClickListener {
-            (activity as? ServerSideAuthActivity)?.relaunch()
+            (activity as? ServerAuthActivity)?.relaunch()
         }
 
         exitButton.setOnClickListener {

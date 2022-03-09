@@ -41,16 +41,25 @@ open class FaceExMainActivity : AppCompatActivity() {
         fabFetch.setOnClickListener {
             FetchFormFragment().show(supportFragmentManager, null)
         }
-
-        facexUserList.layoutManager = LinearLayoutManager(baseContext)
-        facexUserList.adapter =
-            UserInfoAdapter(
+        facexUserList.apply {
+            layoutManager = LinearLayoutManager(baseContext)
+            adapter = UserInfoAdapter(
                 ArrayList(ElementUserUtils.getUsers(baseContext)),
                 this@FaceExMainActivity
             )
-
-        facexUserList.addItemDecoration(DividerItemDecoration(baseContext, VERTICAL))
+            addItemDecoration(DividerItemDecoration(baseContext, VERTICAL))
+        }
     }
+
+    private val uiDelegate: String?
+        get() = PreferenceManager
+            .getDefaultSharedPreferences(baseContext)
+            .getString("uiDelegate", "SelfieDotV2")
+
+    private val processing: String?
+        get() = PreferenceManager
+            .getDefaultSharedPreferences(baseContext)
+            .getString("processing", "Local")
 
     fun onFeaturesFetched() {
         runOnUiThread {
@@ -161,44 +170,44 @@ open class FaceExMainActivity : AppCompatActivity() {
             })
     }
 
-    open fun startEnroll(userId: String) {
-        val uiDelegate = PreferenceManager.getDefaultSharedPreferences(baseContext)
-            .getString("uiDelegate", "SelfieDotV2")
-        val processing = PreferenceManager.getDefaultSharedPreferences(baseContext)
-            .getString("processing", "Local")
-        if ("Server Side" == processing) {
-            serverSideEnroll(userId, uiDelegate)
-        } else {
-            localEnroll(userId, uiDelegate)
+    fun startEnroll(userId: String) {
+        when (processing) {
+            "Server Side - matching" -> {
+                serverMatchingEnroll(userId, uiDelegate)
+            }
+            else -> {
+                localEnroll(userId, uiDelegate)
+            }
         }
     }
 
     private fun localEnroll(userId: String, uiDelegate: String?) {
-        val intent = Intent(this@FaceExMainActivity, ElementFaceEnrollActivity::class.java).apply {
-            putExtra(ElementFaceEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
-            putExtra(ElementFaceEnrollActivity.EXTRA_UI_DELEGATE, uiDelegate)
-        }
+        val intent = Intent(this@FaceExMainActivity, LocalEnrollActivity::class.java)
+            .apply {
+                putExtra(ElementFaceEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
+                putExtra(ElementFaceEnrollActivity.EXTRA_UI_DELEGATE, uiDelegate)
+            }
         startActivityForResult(intent, ENROLL_REQ_CODE)
     }
 
-    private fun serverSideEnroll(userId: String, uiDelegate: String?) {
-        val intent = Intent(this@FaceExMainActivity, ServerSideEnrollActivity::class.java).apply {
-            putExtra(ElementFaceCaptureActivity.EXTRA_ELEMENT_USER_ID, userId)
-            putExtra(ElementFaceCaptureActivity.EXTRA_UI_DELEGATE, uiDelegate)
-            putExtra(ElementFaceCaptureActivity.EXTRA_CAPTURE_MODE, "enroll")
-        }
+    private fun serverMatchingEnroll(userId: String, uiDelegate: String?) {
+        val intent = Intent(this@FaceExMainActivity, ServerEnrollActivity::class.java)
+            .apply {
+                putExtra(ElementFaceCaptureActivity.EXTRA_ELEMENT_USER_ID, userId)
+                putExtra(ElementFaceCaptureActivity.EXTRA_UI_DELEGATE, uiDelegate)
+                putExtra(ElementFaceCaptureActivity.EXTRA_CAPTURE_MODE, "enroll")
+            }
         startActivity(intent)
     }
 
-    open fun startAuth(userId: String) {
-        val uiDelegate = PreferenceManager.getDefaultSharedPreferences(baseContext)
-            .getString("uiDelegate", "SelfieDotV2")
-        val processing = PreferenceManager.getDefaultSharedPreferences(baseContext)
-            .getString("processing", "Local")
-        if ("Server Side" == processing) {
-            serverSideAuth(userId, uiDelegate)
-        } else {
-            localAuth(userId, uiDelegate)
+    fun startAuth(userId: String) {
+        when (processing) {
+            "Server Side - matching" -> {
+                serverMatchingAuth(userId, uiDelegate)
+            }
+            else -> {
+                localAuth(userId, uiDelegate)
+            }
         }
     }
 
@@ -208,25 +217,25 @@ open class FaceExMainActivity : AppCompatActivity() {
         } else {
             LocalAuthActivity::class.java
         }
-
-        val intent = Intent(this@FaceExMainActivity, clazz).apply {
-            putExtra(ElementFaceAuthActivity.EXTRA_ELEMENT_USER_ID, userId)
-            putExtra(ElementFaceAuthActivity.EXTRA_UI_DELEGATE, uiDelegate)
-        }
+        val intent = Intent(this@FaceExMainActivity, clazz)
+            .apply {
+                putExtra(ElementFaceAuthActivity.EXTRA_ELEMENT_USER_ID, userId)
+                putExtra(ElementFaceAuthActivity.EXTRA_UI_DELEGATE, uiDelegate)
+            }
         startActivityForResult(intent, AUTH_REQ_CODE)
     }
 
-    private fun serverSideAuth(userId: String, uiDelegate: String?) {
+    private fun serverMatchingAuth(userId: String, uiDelegate: String?) {
         val clazz = if (uiDelegate == "SelfieDotV2") {
-            ServerSideAuthTransparentActivity::class.java
+            ServerAuthTransparentActivity::class.java
         } else {
-            ServerSideAuthActivity::class.java
+            ServerAuthActivity::class.java
         }
-
-        val intent = Intent(this@FaceExMainActivity, clazz).apply {
-            putExtra(ElementFaceCaptureActivity.EXTRA_ELEMENT_USER_ID, userId)
-            putExtra(ElementFaceCaptureActivity.EXTRA_UI_DELEGATE, uiDelegate)
-        }
+        val intent = Intent(this@FaceExMainActivity, clazz)
+            .apply {
+                putExtra(ElementFaceCaptureActivity.EXTRA_ELEMENT_USER_ID, userId)
+                putExtra(ElementFaceCaptureActivity.EXTRA_UI_DELEGATE, uiDelegate)
+            }
         startActivity(intent)
     }
 }

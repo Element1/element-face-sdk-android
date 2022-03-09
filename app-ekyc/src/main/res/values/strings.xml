@@ -1,0 +1,20 @@
+<resources>
+    <string name="create_user">Create user</string>
+    <string name="selfie_enroll">Selfie enrollment</string>
+    <string name="selfie_auth">Authentication</string>
+    <string name="selfie_auth_transparent">Authentication (Transparent background)</string>
+    <string name="doc_scan">Document scan</string>
+    <string name="delete_user">Delete user</string>
+    <string name="no_user">No user</string>
+    <string name="user_id">User ID: %s</string>
+    <string name="user_status">User status</string>
+    <string name="enroll_status">Selfie enrollment status: %s</string>
+    <string name="ocr_status">Card scan status: %s</string>
+    <string name="card_matching_status">Card to face matching status: %s</string>
+
+    <string name="user_create_url">placeholder</string>
+    <string name="user_status_url">placeholder%s</string>
+    <string name="user_enroll_url">placeholder</string>
+    <string name="user_auth_url">placeholder</string>
+    <string name="card_scan_url">placeholder</string>
+</resources>

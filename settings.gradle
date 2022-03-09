@@ -1,2 +1,3 @@
 include ':app-face'
 include ':app-card'
+include ':app-ekyc'

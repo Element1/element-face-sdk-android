@@ -27,7 +27,7 @@
 
         <EditText
             style="@style/DataFormEditTextCap"
-            android:id="@+id/firstName"
+            android:id="@+id/name"
             android:hint="@string/name" />
 
         <EditText

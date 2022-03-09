@@ -3,10 +3,10 @@
     package="com.element.facex">
 
     <application
-        android:name=".MainApplication"
+        android:name=".FaceApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
 
         <activity
@@ -27,7 +27,11 @@
             android:label="@string/title_activity_settings" />
 
         <activity
-            android:name="com.element.camera.ElementFaceEnrollActivity"
+            android:name=".LocalEnrollActivity"
+            android:clearTaskOnLaunch="true" />
+
+        <activity
+            android:name=".ServerEnrollActivity"
             android:clearTaskOnLaunch="true" />
 
         <activity
@@ -40,15 +44,11 @@
             android:clearTaskOnLaunch="true" />
 
         <activity
-            android:name=".ServerSideEnrollActivity"
+            android:name=".ServerAuthActivity"
             android:clearTaskOnLaunch="true" />
 
         <activity
-            android:name=".ServerSideAuthActivity"
-            android:clearTaskOnLaunch="true" />
-
-        <activity
-            android:name=".ServerSideAuthTransparentActivity"
+            android:name=".ServerAuthTransparentActivity"
             android:theme="@style/Theme.Transparent"
             android:clearTaskOnLaunch="true" />
     </application>

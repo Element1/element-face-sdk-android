@@ -1,4 +1,9 @@
 <resources>
+    <string-array name="liveness">
+        <item>Gaze</item>
+        <item>Depth</item>
+    </string-array>
+
     <string-array name="processing">
         <item>Local</item>
         <item>Server Side</item>

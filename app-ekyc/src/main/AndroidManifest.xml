@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.element.ekycex">
+
+    <application
+        android:name=".EKycApplication"
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".EKycExMainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.element.camera.ElementCloudFaceActivity"
+            android:clearTaskOnLaunch="true" />
+
+        <activity
+            android:name=".AuthTransparentActivity"
+            android:theme="@style/Theme.Transparent"
+            android:clearTaskOnLaunch="true" />
+
+        <activity
+            android:name="com.element.camera.ElementCloudDocSelectActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="com.element.camera.ElementCloudCardScanActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

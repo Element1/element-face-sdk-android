@@ -3,8 +3,10 @@ package com.element.facex
 import com.element.camera.Capture
 import com.element.camera.ElementFaceAuthTask
 import com.element.camera.ElementFaceCaptureActivity
+import com.element.facex.R
+import com.element.facex.ResultFragment
 
-open class ServerSideAuthActivity : ElementFaceCaptureActivity() {
+open class ServerAuthActivity : ElementFaceCaptureActivity() {
 
     private val userId: String? by lazy {
         intent.getStringExtra(EXTRA_ELEMENT_USER_ID)

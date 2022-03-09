@@ -18,17 +18,17 @@ It is straightforward to use `element-face-cam` and `element-face-core` for requ
 - Please refer to [prerequisites](prerequisites.md) to configure the development environments.
 
 ### Dependencies for `element-face-cam`
-- AndroidX WorkManager: 2.3.4
+- AndroidX WorkManager: 2.6.0
 - Google Guava for Android: 27.0.1-android
 - Google Gson for Android: 2.2.4 (can be omitted if Amazon AWS Mobile SDK is included with `element-face-core`)
 
 ### Dependencies for `element-face-core`
-- Google Play Service Location: 17.0.0
-- Google Material Design: 1.1.0
+- Google Play Service Location: 18.0.0
+- Google Material Design: 1.4.0
 - Amazon AWS Mobile SDK: 2.8.5
 
 ### Dependencies for `element-face-ui`
-- AndroidX Kotlin extensions: 1.3.0
+- AndroidX Kotlin extensions: 1.6.0
 - Airbnb Lottie Library: 3.0.7
 
 References for dependencies can be found in the sample project at [app-face](../app-face/build.gradle).
@@ -87,8 +87,7 @@ Declare the Activity in the manifest:
     <application android:name=".MainApplication">
       .....
       <activity android:name="com.element.camera.ElementFaceEnrollActivity"
-      android:theme="@style/CamTheme.Blue"
-          android:clearTaskOnLaunch="true" />
+        android:clearTaskOnLaunch="true" />
       .....
     </application>
   </manifest>

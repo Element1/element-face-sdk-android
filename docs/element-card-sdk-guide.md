@@ -6,13 +6,13 @@ The Element Card SDK is an API library that enables ID card / document scanning 
 ## Version Support
 ### Android device, development environments, and Element Dashboard
 - The minimum Android device requirement is Android 5.0 or API 21 (Android OS Lollipop and up). A minimum of 2GB of RAM is recommended for optimal performance.
-- Android Target SDK Version 29, Build Tool Version 29.0.3, and AndroidX.
+- Android Target SDK Version 30, Build Tool Version 30.0.2, and AndroidX.
 - Please refer to [prerequisites](prerequisites.md) to configure the development environments.
 - The EAK for the Card SDK requires extra settings. This step has not automated yet. Please contact Element with your EAK if you would like to try the Card SDK.
 
 ### Dependencies
-- Kotlin Coroutines: 1.4.0
-- AndroidX Kotlin Coroutines: 1.4.0
+- Kotlin Coroutines: 1.5.2
+- AndroidX Kotlin Coroutines: 1.5.2
 
 References for dependencies can be found in the sample project at [app-card](../app-card/build.gradle).
 
