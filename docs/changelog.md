@@ -1,6 +1,10 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.7.3.33219
+[April 15, 2022]
+* Hotfixes
+
 #### Version: 1.7.2.32694
 [March 25, 2022]
 * Enabled multiple user features processing
