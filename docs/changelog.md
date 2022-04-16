@@ -1,6 +1,10 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.7.1.32522
+[March 18, 2022]
+* Performance tuning
+
 #### Version: 1.7.0.32291
 [March 8, 2022]
 * Introduced the [element-ekyc-cloud](element-ekyc-sdk-guide.md) AAR library for the cloud eKYC solution
