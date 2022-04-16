@@ -10,7 +10,7 @@
     <string name="user_status">User status</string>
     <string name="enroll_status">Selfie enrollment status: %s</string>
     <string name="ocr_status">Card scan status: %s</string>
-    <string name="card_matching_status">Card to face matching status: %s</string>
+    <string name="card_match_status">Card to face matching status: %s</string>
 
     <string name="user_create_url">placeholder</string>
     <string name="user_status_url">placeholder%s</string>

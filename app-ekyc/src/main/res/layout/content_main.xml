@@ -68,7 +68,7 @@
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
             <TextView
-                android:id="@+id/cardMatchingStatus"
+                android:id="@+id/cardMatchStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"

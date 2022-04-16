@@ -164,7 +164,7 @@ open class EKycExMainActivity : AppCompatActivity() {
             deleteUser.isEnabled = false
             enrollStatus.visibility = GONE
             ocrStatus.visibility = GONE
-            cardMatchingStatus.visibility = GONE
+            cardMatchStatus.visibility = GONE
         } else {
             userId.text = getString(R.string.user_id, myUserId)
             createUser.isEnabled = false
@@ -176,15 +176,15 @@ open class EKycExMainActivity : AppCompatActivity() {
             deleteUser.isEnabled = true
             enrollStatus.visibility = VISIBLE
             ocrStatus.visibility = VISIBLE
-            cardMatchingStatus.visibility = VISIBLE
+            cardMatchStatus.visibility = VISIBLE
             myUserStatus?.let {
                 enrollStatus.text = getString(R.string.enroll_status, it.enrollStatus)
                 ocrStatus.text = getString(R.string.ocr_status, it.ocrStatus)
-                cardMatchingStatus.text = getString(R.string.card_matching_status, it.cardMatchingStatus)
+                cardMatchStatus.text = getString(R.string.card_match_status, it.cardMatchStatus)
             } ?: kotlin.run {
                 enrollStatus.text = getString(R.string.enroll_status, "N/A")
                 ocrStatus.text = getString(R.string.ocr_status, "N/A")
-                cardMatchingStatus.text = getString(R.string.card_matching_status, "N/A")
+                cardMatchStatus.text = getString(R.string.card_match_status, "N/A")
             }
         }
     }
