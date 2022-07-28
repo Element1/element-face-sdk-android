@@ -1,6 +1,11 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.7.4.35712
+[July 28, 2022]
+* Apis to retrive unsynchronized accounts, sessions, and files
+* Adjusted lighting condtion and frame rules
+
 #### Version: 1.7.3.33219
 [April 15, 2022]
 * Hotfixes
